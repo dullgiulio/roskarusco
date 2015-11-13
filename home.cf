@@ -1,0 +1,13 @@
+rule {
+	# Match rules are AND.
+	# Multiple match blocks are OR.
+	match {
+		file {
+			type: doc
+		}
+	}
+	# One or more actions to perform for each matched file.
+	move {
+		dir: Documents/{{.filename}}
+	}
+}
